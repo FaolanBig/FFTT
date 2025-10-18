@@ -62,7 +62,7 @@ namespace fft_transmission
             }
 
             WriteWav(samples.ToArray(), "encoded.wav");
-            Console.WriteLine("✅ Encoded to encoded.wav");
+            Console.WriteLine("Encoded to encoded.wav");
         }
 
         static IEnumerable<short> EncodeBlock(byte[] block)
@@ -114,7 +114,7 @@ namespace fft_transmission
             }
 
             File.WriteAllBytes("decoded.bin", output.ToArray());
-            Console.WriteLine("✅ Decoded to decoded.bin");
+            Console.WriteLine("Decoded to decoded.bin");
         }
 
         static byte[] DecodeBlock(double[] samples)
