@@ -30,8 +30,8 @@ namespace fft_transmission
         const double ToneDuration = 0.1;   // 100 ms
         const double SilenceDuration = 0.05; // 50 ms
         const int BitsPerBlock = 32;       // 4 Bytes
-        const double BaseFreq = 500.0;
-        const double FreqStep = 20.0;
+        const double BaseFreq = 1500.0;
+        const double FreqStep = 50.0;
 
         static void Main(string[] args)
         {
