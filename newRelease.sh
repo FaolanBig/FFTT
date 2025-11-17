@@ -9,7 +9,7 @@ REPO_NAME="fft_transmission"
 BUILD_DIR="build_output"
 PROJECT_FILE="fft_transmission.csproj"
 LINUX_FILENAME="fft_transmission_linux_x86_64"
-WINDOWS_FILENAME="DB-Matcher-v5_win_x86_64"
+WINDOWS_FILENAME="fft_transmission_win_x86_64"
 RELEASE_NAME="automatically generated binaries with sha256 checksums"
 
 # Clone repository
