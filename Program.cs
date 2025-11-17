@@ -21,6 +21,7 @@ using System.Linq;
 using System.Numerics;
 using MathNet.Numerics.IntegralTransforms;
 using BigLog;
+using MathNet.Numerics;
 
 
 namespace fft_transmission
@@ -32,7 +33,7 @@ namespace fft_transmission
         const double SilenceDuration = 0.05; // 50 ms
         const int BitsPerBlock = 32;       // 4 Bytes
         const double BaseFreq = 500.0;
-        const double FreqStep = 20.0;
+        const double FreqStep = 75.0; // old 20.0, 50.0 works best
 
         static Logger logger = new Logger()
         {
@@ -56,7 +57,7 @@ namespace fft_transmission
 
         static void Main(string[] args)
         {
-            if (args.Length < 2)
+            if (args.Length != 2)
             {
                 /*Console.WriteLine("Usage:\n" +
                     "fftt encode <input-file>\n" +
@@ -68,8 +69,24 @@ namespace fft_transmission
                 return;
             }
 
-            if (args[0] == "encode") { logger.Inf("starting engine"); Encode(args[1]); }
-            else if (args[0] == "decode") { logger.Inf("starting engine"); Decode(args[1]); }
+            if (args[0] == "encode") 
+            {
+                if (!File.Exists(args[1])) { logger.Err("input file not found at " + Path.GetFullPath(args[1])); }
+                else
+                {
+                    logger.Inf("starting engine");
+                    Encode(args[1]);
+                }
+            }
+            else if (args[0] == "decode") 
+            {
+                if (!File.Exists(args[1])) { logger.Err("input file not found at " + Path.GetFullPath(args[1])); }
+                else
+                {
+                    logger.Inf("starting engine");
+                    Decode(args[1]);
+                }
+            }
             else
             {
                 logger.Err("invalid arguments");
@@ -78,7 +95,7 @@ namespace fft_transmission
                 logger.Inf("    fftt decode <audio-file>");
                 return;
             }
-            logger.Suc("bye from fftt :)");
+            logger.Inf("bye from fftt :)");
             logger.Inf("closing");
         }
 
@@ -148,6 +165,7 @@ namespace fft_transmission
             var samples = ReadWav(wavPath, out int channels, out int sampleRate);
             int blockSamples = (int)(SampleRate * (ToneDuration + SilenceDuration));
             int toneSamples = (int)(SampleRate * ToneDuration);
+            logger.Suc("loaded " + samples.Length * sizeof(short) + " bytes");
             logger.Suc("found: " + samples.Length + " samples, " + channels + " channels, " + sampleRate + " Hz");
             List<byte> output = new();
 
