@@ -8,8 +8,6 @@ Die Nutzung von Frequenzmultiplexing ermöglicht eine robuste und klar abgegrenz
 
 > :information_source: FFTT kann für alle Dateien verwendet werden, deren Inhalt unabhängig von Header und Metadaten funktionsfähig ist.
 
-Das Projekt steht unter der GNU Affero General Public License v3.
-
 ---
 
 ## Technischer Hintergrund
