@@ -4,12 +4,12 @@
 # you can see your gh status by running 'gh auth status'
 
 # Variables
-REPO_URL="https://github.com/FaolanBig/fft_transmission.git"
-REPO_NAME="fft_transmission"
+REPO_URL="https://github.com/FaolanBig/fftt.git"
+REPO_NAME="fftt"
 BUILD_DIR="build_output"
-PROJECT_FILE="fft_transmission.csproj"
-LINUX_FILENAME="fft_transmission_linux_x86_64"
-WINDOWS_FILENAME="fft_transmission_win_x86_64"
+PROJECT_FILE="fftt.csproj"
+LINUX_FILENAME="fftt_linux_x86_64"
+WINDOWS_FILENAME="fftt_win_x86_64"
 RELEASE_NAME="automatically generated binaries with sha256 checksums"
 
 # Clone repository
