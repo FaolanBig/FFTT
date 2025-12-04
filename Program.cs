@@ -1,5 +1,6 @@
 ﻿/*
-    <one line to give the program's name and a brief idea of what it does.>
+    FFTT (Fast Furier Transform Transmission) lets you encode and decode files into audiofiles and back.
+    This can be used to transfer files via an audible signal from one machine to another.
     Copyright (C) 2025  Carl Öttinger
 
     This program is free software: you can redistribute it and/or modify
